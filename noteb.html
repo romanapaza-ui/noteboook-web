@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMD Servicios Informáticos — Grupo Notebook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg1: #000814;
+      --bg2: #001d3d;
+      --card: #021e39;
+      --accent: #4dd2ff;
+      --accent2: #7fffd4;
+      --text: #e8f7ff;
+      --muted: #b9e6ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 5% 5%, rgba(77, 210, 255, 0.16), transparent 60%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      padding: 32px;
+    }
+
+    .wrap {
+      max-width: 1150px;
+      margin: auto;
+      animation: fadeIn 0.9s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);} 
+      to { opacity: 1; transform: translateY(0);} 
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent2);
+      letter-spacing: 1px;
+    }
+
+    .lead {
+      margin-top: 6px;
+      color: var(--muted);
+    }
+
+    .grid {
+      margin-top: 30px;
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      padding: 24px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+      transition: 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.65);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .section-head:hover h2 { color: var(--accent); }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .section-body {
+      margin-top: 12px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.55s ease, opacity 0.4s ease;
+    }
+
+    .section-body.open {
+      opacity: 1;
+      max-height: 5000px;
+    }
+
+    footer { text-align: center; margin-top: 40px; color: rgba(255,255,255,0.55);} 
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div style="width:80px;height:80px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.45);">
+    <svg width="48" height="48" fill="white" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+  </div>
+  <div>
+    <h1>Grupo Notebook — Informe Técnico</h1>
+    <p class="lead">Comparación técnica: Notebook vs Netbook</p>
+  </div>
+</header>
+
+<div class="grid">
+
+<article class="card">
+  <div class="section-head" data-target="dif">
+    <div class="icon"><svg width="24" height="24" fill="white"><circle cx="12" cy="12" r="10"/></svg></div>
+    <h2>1 • ¿Qué diferencias principales tiene con una netbook?</h2>
+  </div>
+  <div class="section-body" id="dif">
+    <p>Una notebook es un equipo más grande, potente y versátil que una netbook. Posee mejor pantalla, mayor almacenamiento, procesadores más rápidos y más puertos de conexión. La netbook, por el contrario, está pensada para tareas básicas y movilidad extrema, sacrificando rendimiento.</p>
+  </div>
+</article>
+
+<article class="card">
+  <div class="section-head" data-target="rend">
+    <div class="icon"><svg width="24" height="24" fill="white"><path d="M12 2v20M2 12h20"/></svg></div>
+    <h2>2 • ¿Qué ventajas ofrecía la notebook en rendimiento?</h2>
+  </div>
+  <div class="section-body" id="rend">
+    <p>Las notebooks incluían procesadores de varios núcleos, discos más rápidos, mayor memoria RAM y mejores sistemas de refrigeración. Esto les permitía ejecutar programas pesados sin perder velocidad, siendo mucho más eficientes que una netbook.</p>
+  </div>
+</article>
+
+<article class="card">
+  <div class="section-head" data-target="completo">
+    <div class="icon"><svg width="24" height="24" fill="white"><path d="M6 2h12v20H6z"/></svg></div>
+    <h2>3 • ¿Por qué es un dispositivo más completo?</h2>
+  </div>
+  <div class="section-body" id="completo">
+    <p>La notebook integra componentes de mayor calidad, permite instalar más software, soporta multitarea real, puede expandirse (RAM, almacenamiento) y tiene mejor conectividad. Al ofrecer más funciones y potencia, cubre necesidades académicas, laborales y técnicas.</p>
+  </div>
+</article>
+
+<article class="card">
+  <div class="section-head" data-target="tareas">
+    <div class="icon"><svg width="24" height="24" fill="white"><rect x="3" y="4" width="18" height="3" rx="1"/></svg></div>
+    <h2>4 • ¿Qué tareas más exigentes puede realizar?</h2>
+  </div>
+  <div class="section-body" id="tareas">
+    <p>Una notebook puede ejecutar tareas que una netbook no podría manejar, como:</p>
+    <ul>
+      <li>Edición de video y fotografía</li>
+      <li>Programación y máquinas virtuales</li>
+      <li>Diseño CAD básico o intermedio</li>
+      <li>Juegos de mayor demanda gráfica</li>
+      <li>Multitarea intensiva (muchas pestañas, softwares abiertos, etc.)</li>
+    </ul>
+  </div>
+</article>
+
+</div>
+
+<footer>
+  Informe técnico — Grupo Notebook
+</footer>
+</div>
+<script>
+  document.querySelectorAll('.section-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const body = document.getElementById(head.getAttribute('data-target'));
+      body.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
+
